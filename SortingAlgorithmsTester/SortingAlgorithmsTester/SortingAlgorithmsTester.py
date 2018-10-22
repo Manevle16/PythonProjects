@@ -15,7 +15,7 @@ while(True):
         continue
 
 listOfItems = ArrayList(numOfItems)
-print(listOfItems.items)
+
 
 while(True):
     try:
@@ -37,7 +37,26 @@ switch = {1: listOfItems.sortList(),
           }
 
 switch[selection]
-print("Before Sort" + str(listOfItems.items))
-Sort.insertionSort(listOfItems.items)
-print("After Sort" + str(listOfItems.items))
 
+print(listOfItems.items)
+
+while(True):
+    try:
+        print("What sort would you like to implement?: " \
+            "\n1. Insertion Sort\n2. Selection Sort")
+        selection = int(input("Please enter number corresponding to selection: "))
+        if(selection < 1 or selection > 2):
+            print("Please enter a number from the selection")
+            continue
+        else:
+            break
+    except ValueError:
+        print("Must be of type integer")
+        continue
+
+switch = {1: Sort.insertionSort(listOfItems.items),
+          2: Sort.selectionSort(listOfItems.items)
+          }
+
+switch[selection]
+print("After Sort" + str(listOfItems.items))

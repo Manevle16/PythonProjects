@@ -38,7 +38,6 @@ class ArrayList:
     
     def semiSortList(this):
         this.sortList()
-        print(this.items)
         items = this.items
         rand = Random()
 
