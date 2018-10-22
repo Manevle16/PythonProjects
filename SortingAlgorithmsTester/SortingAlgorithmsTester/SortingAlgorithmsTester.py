@@ -1,5 +1,7 @@
 from ArrayList import ArrayList
+from Sort import Sort
 import math
+
 while(True):
     try:
         numOfItems = int(input("How many items would you like to contain in the list? "))
@@ -35,6 +37,7 @@ switch = {1: listOfItems.sortList(),
           }
 
 switch[selection]
-print(listOfItems.items)
+print("Before Sort" + str(listOfItems.items))
+Sort.insertionSort(listOfItems.items)
+print("After Sort" + str(listOfItems.items))
 
-    
