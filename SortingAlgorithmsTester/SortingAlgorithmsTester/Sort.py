@@ -35,4 +35,6 @@ class Sort:
             items[i] = items[minIndex]
             items[minIndex] = temp
 
+    def quickSort(items, startInd, endInd):
+        if(startInd < endInd):
 
