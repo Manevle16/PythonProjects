@@ -2,6 +2,7 @@ from ArrayList import ArrayList
 from Sort import Sort
 import math
 import time
+
 while(True):
     while(True):
         try:
@@ -39,14 +40,14 @@ while(True):
     if(selection != 4):
         switch[selection]()
 
-    #print(listOfItems.items)
+    print(listOfItems.items)
 
     while(True):
         try:
             print("What sort would you like to implement?: " \
-                "\n1. Insertion Sort\n2. Selection Sort\n3. Quick Sort")
+                "\n1. Insertion Sort\n2. Selection Sort\n3. Quick Sort\n4. Merge Sort")
             selection = int(input("Please enter number corresponding to selection: "))
-            if(selection < 1 or selection > 3):
+            if(selection < 1 or selection > 4):
                 print("Please enter a number from the selection")
                 continue
             else:
@@ -58,16 +59,17 @@ while(True):
 
     switch = {1: sort.insertionSort,
               2: sort.selectionSort,
-              3: sort.quickSort
+              3: sort.quickSort,
+              4: sort.mergeSort
               }
 
     startTime = time.time()
-    if(selection == 3):
+    if(selection == 3 or selection == 4):
         switch[selection](listOfItems.items, 0, len(listOfItems.items)-1)
     else:
         switch[selection](listOfItems.items)
     elapsedTime = time.time() - startTime
     print(elapsedTime)
-    #print("After Sort" + str(listOfItems.items))
+    print("After Sort" + str(listOfItems.items))
     print("# of compares: " + str(sort.counters["compareCounter"]) + "  # of swaps: " + 
           str(sort.counters["swapCounter"]) + "  Time taken: " + str(elapsedTime) + "\n")
