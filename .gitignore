@@ -263,6 +263,7 @@ __pycache__/
 #Image Cascade Data
 MachineImageProcessing/PositiveImages
 MachineImageProcessing/NegativeImages
+MachineImageProcessing/TestImages
 MachineImageProcessing/positive_images
 MachineImageProcessing/negative_images
 MachineImageProcessing/OpenCv
