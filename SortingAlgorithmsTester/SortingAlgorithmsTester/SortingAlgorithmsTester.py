@@ -7,7 +7,7 @@ while(True):
     while(True):
         try:
             numOfItems = int(input("How many items would you like to contain in the list? "))
-            if(numOfItems <= 0 ):
+            if(numOfItems <= 0):
                 print("Number of items must be greater than 0")
                 continue
             else:
@@ -17,7 +17,6 @@ while(True):
             continue
 
     listOfItems = ArrayList(numOfItems)
-
 
     while(True):
         try:
@@ -44,8 +43,8 @@ while(True):
 
     while(True):
         try:
-            print("What sort would you like to implement?: " \
-                "\n1. Insertion Sort\n2. Selection Sort\n3. Quick Sort\n4. Merge Sort")
+            print("What sort would you like to implement?: "
+                  "\n1. Insertion Sort\n2. Selection Sort\n3. Quick Sort\n4. Merge Sort")
             selection = int(input("Please enter number corresponding to selection: "))
             if(selection < 1 or selection > 4):
                 print("Please enter a number from the selection")
@@ -71,5 +70,5 @@ while(True):
     elapsedTime = time.time() - startTime
     print(elapsedTime)
     print("After Sort" + str(listOfItems.items))
-    print("# of compares: " + str(sort.counters["compareCounter"]) + "  # of swaps: " + 
+    print("# of compares: " + str(sort.counters["compareCounter"]) + "  # of swaps: " +
           str(sort.counters["swapCounter"]) + "  Time taken: " + str(elapsedTime) + "\n")
