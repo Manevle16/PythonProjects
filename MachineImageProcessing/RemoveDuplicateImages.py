@@ -8,13 +8,6 @@ from PIL import ImageChops
 method = cv2.TM_SQDIFF_NORMED
 
 
-def equal(im1, im2):
-    #    print(im1)
-    #    print(im2)
-    #    print(ImageChops.difference(im1, im2).getbbox() is None)
-    return ImageChops.difference(im1, im2).getbbox() is None
-
-
 os.chdir("C:/Users/Manev/Downloads/Google Images")
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
@@ -22,10 +15,21 @@ eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 # if not os.path.exists("positive_images/"):
 #    os.makedirs("positive_images/")
 
-address = "images"
+address = "megumin"
 print(os.listdir(address))
 i = 1
 files = os.listdir(address)
+
+for file in files:
+    if("jpg" not in file):
+        fileName = file.split('.')[0]
+        if(fileName+".jpg" in files):
+            continue
+        img = Image.open(address + "/" + file)
+        rgb_img = img.convert('RGB')
+        rgb_img.save(address + "/" + fileName + ".jpg")
+        os.remove(address + "/" + file)
+
 for file in files:
     for file2 in files:
         if(file == file2):
